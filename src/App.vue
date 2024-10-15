@@ -1,26 +1,21 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <ZeroTrustScoreWidget :data="jsonData" />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ZeroTrustScoreWidget from './components/ZeroTrustScoreWidget.vue';
+import jsonData from './data.json'; // Replace with your JSON data path
 
 export default {
-  name: 'App',
   components: {
-    HelloWorld
-  }
-}
+    ZeroTrustScoreWidget,
+  },
+  data() {
+    return {
+      jsonData,
+    };
+  },
+};
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
